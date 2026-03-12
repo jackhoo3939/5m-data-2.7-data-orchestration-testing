@@ -16,13 +16,44 @@ Answer:
 
 Specs for `dbt_utils`:
 
-```yml
+```
+
+- name: bottles_sold
+        description: "The number of bottles sold"
+        tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                max_value: 20000
+
+- name: sale_dollars
+        description: "The total sales in dollars"
+        tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                max_value: 300000
 
 ```
 
 Specs for `dbt-expectations`:
 
-```yml
+```
+- name: bottles_sold
+        description: "The number of bottles sold"
+        tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                max_value: 20000
+
+- name: sale_dollars
+        description: "The total sales in dollars"
+        tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 0
+                max_value: 300000
 
 ```
 
